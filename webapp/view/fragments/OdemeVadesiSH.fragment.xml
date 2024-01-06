@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog id="idSelectDialogOdemeVadesi" title="Ödeme Koşulu"
+		items="{ path: '/ZtermSHSet', sorter: { path: 'Zterm', descending: false } }" liveChange="_searchOdemeVadesiSH" search="_searchOdemeVadesiSH" confirm="_confirmOdemeVadesiSH"
+		cancel="_confirmVbelnSH">
+		<StandardListItem title="{Zterm}" description="{Text1}" iconDensityAware="false" iconInset="false" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

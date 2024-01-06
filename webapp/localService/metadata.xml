@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZXK_01_V1_SRV" xml:lang="tr" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="GetRole" sap:content-version="1">
+				<Key><PropertyRef Name="Uname"/></Key><Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Kullanıcı adı" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aciklama" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="100 karakter"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Şirket kodu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ekorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="SA org." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Yetki" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="İstek Durumu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="YeniTalepKayit" sap:content-version="1">
+				<Key><PropertyRef Name="Requestid"/></Key><Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Saknr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Tolerans" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Username" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Neden" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="Neden" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ereturnt" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="C" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Requestid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Karakter alanı uzunluğu 12"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Şirket kodu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ekorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="SA org." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ktokk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Hesap grubu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ktock" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Referans" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Ad 1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Telf1" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Telefon 1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AdSmtpadr" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-posta adresi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Stcd1" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Vergi numarası1"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Stkzu" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="KDV tabi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Land1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Ülke" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bankk" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Banka anahtarı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bankn" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Banka hesabı" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="KoinhFi" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Hesap sahibi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bvtyp" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Muhatap bnk.tp."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Altkn" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Eski hsp.no" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zterm" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Ödeme koşulu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aciklama" Type="Edm.String" Nullable="false" MaxLength="1000" sap:unicode="false" sap:label="Red/Revize Nedeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Statu" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="İstek Durumu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Onay" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Malzeme Açma Onay Durumu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vekalet" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Kullanıcı adı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="GetVekalet" sap:content-version="1">
+				<Key><PropertyRef Name="Uname"/></Key><Property Name="IUname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Kullanıcı adı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Kullanıcı adı" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NameText" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Tam ad" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Şirket kodu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ekorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="SA org." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Yetki" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="İstek Durumu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ReturnTalepS" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="İleti tipi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Message Class" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="İleti numarası"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="İleti metni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LogNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Günlük no." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LogMsgNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="İleti numarası"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV3" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV4" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Parameter" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Parametre adı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Row" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Parametre st." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Field" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Alan adı" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="System" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Mantıksal sistem"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="YeniTalepKayitCreateDeep" sap:content-version="1">
+				<Key><PropertyRef Name="Ereturnt"/></Key><Property Name="Ereturnt" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="NAVRETURN" Relationship="ZXK_01_V1_SRV.TalepAssoReturn" FromRole="FromRole_TalepAssoReturn"
+					ToRole="ToRole_TalepAssoReturn"/><NavigationProperty Name="NAVISDATA" Relationship="ZXK_01_V1_SRV.TalepAsso" FromRole="FromRole_TalepAsso" ToRole="ToRole_TalepAsso"/></EntityType>
+			<EntityType Name="DocList2" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/><PropertyRef Name="Fname"/></Key><Property Name="IvReqid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Docid" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Doc. ID" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Guid" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="20 karakter" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Doctext" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="100 karakter"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false"
+					sap:label="SAP ArchiveLink: Poolinfo/Storage Strategy" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Karakter alanı uzunluğu 12"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Yaratan" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Dallanma adı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Tarih" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Tarih" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Saat" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Saat" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Fname" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="128 karakter" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="File" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="IvFormno"/><PropertyRef Name="IvGuid"/></Key><Property Name="IvFormno" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IvGuid" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="FILENP" Relationship="ZXK_01_V1_SRV.AssoFile" FromRole="FromRole_AssoFile" ToRole="ToRole_AssoFile"/></EntityType>
+			<EntityType Name="FileU" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="IvReqid"/><PropertyRef Name="IvDocid"/></Key><Property Name="IvReqid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IvDocid" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="FILENP1" Relationship="ZXK_01_V1_SRV.AssoFileU" FromRole="FromRole_AssoFileU" ToRole="ToRole_AssoFileU"/></EntityType>
+			<EntityType Name="FileST" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="IvFormno"/><PropertyRef Name="IvGuid"/></Key><Property Name="IvFormno" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IvGuid" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="FileUST" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="IvReqid"/><PropertyRef Name="IvDocid"/></Key><Property Name="IvReqid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="IvDocid" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Return" sap:content-version="1">
+				<Key><PropertyRef Name="Type"/><PropertyRef Name="Id"/><PropertyRef Name="Number"/><PropertyRef Name="Message"/></Key><Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="İleti tipi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Message Class" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="İleti numarası"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="İleti metni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LogNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Günlük no." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LogMsgNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="İleti numarası"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV3" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV4" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Parameter" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Parametre adı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Row" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Parametre st." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Field" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Alan adı" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="System" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Mantıksal sistem"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="GetReqid" sap:content-version="1">
+				<Key><PropertyRef Name="EvReqid"/></Key><Property Name="EvReqid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Karakter alanı uzunluğu 12"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="GetList" sap:content-version="1">
+				<Key><PropertyRef Name="Requestid"/></Key><Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Username" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Neden" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="Neden" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IStatu" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="İstek Durumu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Requestid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Karakter alanı uzunluğu 12"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Şirket kodu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ekorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="SA org." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ktokk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Hesap grubu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ktock" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Ref.hesap grubu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Ad 1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Telf1" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Telefon 1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AdSmtpadr" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-posta adresi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Stcd1" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Vergi numarası1"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Stkzu" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="KDV tabi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Land1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Ülke" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bankk" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Banka anahtarı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bankn" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Banka hesabı" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="KoinhFi" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Hesap sahibi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bvtyp" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Muhatap bnk.tp."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Altkn" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Eski hsp.no" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zterm" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Ödeme koşulu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aciklama" Type="Edm.String" Nullable="false" MaxLength="1000" sap:unicode="false" sap:label="Red/Revize Nedeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Statu" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="İstek Durumu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Onay" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Malzeme Açma Onay Durumu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vekalet" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Kullanıcı adı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="UlkeSH" sap:content-version="1">
+				<Key><PropertyRef Name="Land1"/></Key><Property Name="IvSearchField" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="100 karakter"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Land1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Ülke" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Landx" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Tanım" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZtermSH" sap:content-version="1">
+				<Key><PropertyRef Name="Zterm"/></Key><Property Name="IvSearchField" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="100 karakter"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zterm" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Ödeme koşulu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Koart" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Hesap türü" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Text1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Açıklama" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="KtokkSH" sap:content-version="1">
+				<Key><PropertyRef Name="Ktokk"/></Key><Property Name="IvSearchField" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="100 karakter"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ktokk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Hesap grubu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="SASParaSh" sap:content-version="1">
+				<Key><PropertyRef Name="Waers"/></Key><Property Name="IvSearchField" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="100 karakter"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Para birimi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/><Property Name="Ltext" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="40 karakter uzunluğundaki metin"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="MutabakatSh" sap:content-version="1">
+				<Key><PropertyRef Name="Saknr"/></Key><Property Name="IvSearchField" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="100 karakter"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Saknr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Ana hesap" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Txt50" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Tanım" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<ComplexType Name="EReturn"><Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="İleti tipi" sap:creatable="false" sap:updatable="false"
+				sap:sortable="false" sap:filterable="false"/><Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Message Class" sap:creatable="false" sap:updatable="false"
+				sap:sortable="false" sap:filterable="false"/><Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="İleti numarası" sap:creatable="false"
+				sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:label="İleti metni" sap:creatable="false"
+				sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LogNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Günlük no." sap:creatable="false" sap:updatable="false"
+				sap:sortable="false" sap:filterable="false"/><Property Name="LogMsgNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="İleti numarası" sap:creatable="false"
+				sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV1" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="İleti değişkeni" sap:creatable="false"
+				sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV2" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="İleti değişkeni" sap:creatable="false"
+				sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV3" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="İleti değişkeni" sap:creatable="false"
+				sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV4" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="İleti değişkeni" sap:creatable="false"
+				sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Parameter" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Parametre adı" sap:creatable="false"
+				sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Row" Type="Edm.Int32" Nullable="false" sap:label="Parametre st." sap:creatable="false" sap:updatable="false"
+				sap:sortable="false" sap:filterable="false"/><Property Name="Field" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Alan adı" sap:creatable="false" sap:updatable="false"
+				sap:sortable="false" sap:filterable="false"/><Property Name="System" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Mantıksal sistem" sap:creatable="false"
+				sap:updatable="false" sap:sortable="false" sap:filterable="false"/></ComplexType>
+			<Association Name="AssoFileU" sap:content-version="1"><End Type="ZXK_01_V1_SRV.FileU" Multiplicity="1" Role="FromRole_AssoFileU"/><End Type="ZXK_01_V1_SRV.FileUST" Multiplicity="*" Role="ToRole_AssoFileU"/></Association>
+			<Association Name="TalepAssoReturn" sap:content-version="1"><End Type="ZXK_01_V1_SRV.YeniTalepKayitCreateDeep" Multiplicity="1" Role="FromRole_TalepAssoReturn"/><End Type="ZXK_01_V1_SRV.ReturnTalepS" Multiplicity="*" Role="ToRole_TalepAssoReturn"/></Association>
+			<Association Name="TalepAsso" sap:content-version="1"><End Type="ZXK_01_V1_SRV.YeniTalepKayitCreateDeep" Multiplicity="1" Role="FromRole_TalepAsso"/><End Type="ZXK_01_V1_SRV.YeniTalepKayit" Multiplicity="*" Role="ToRole_TalepAsso"/></Association>
+			<Association Name="AssoFile" sap:content-version="1"><End Type="ZXK_01_V1_SRV.File" Multiplicity="1" Role="FromRole_AssoFile"/><End Type="ZXK_01_V1_SRV.FileST" Multiplicity="*" Role="ToRole_AssoFile"/></Association>
+			<EntityContainer Name="ZXK_01_V1_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="GetRoleSet" EntityType="ZXK_01_V1_SRV.GetRole" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="YeniTalepKayitSet" EntityType="ZXK_01_V1_SRV.YeniTalepKayit" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="GetVekaletSet" EntityType="ZXK_01_V1_SRV.GetVekalet" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ReturnTalepSSet" EntityType="ZXK_01_V1_SRV.ReturnTalepS" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="YeniTalepKayitCreateDeepSet" EntityType="ZXK_01_V1_SRV.YeniTalepKayitCreateDeep" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="DocList2Set" EntityType="ZXK_01_V1_SRV.DocList2" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="FileSet" EntityType="ZXK_01_V1_SRV.File" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="FileUSet" EntityType="ZXK_01_V1_SRV.FileU" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="FileSTSet" EntityType="ZXK_01_V1_SRV.FileST" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="FileUSTSet" EntityType="ZXK_01_V1_SRV.FileUST" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ReturnSet" EntityType="ZXK_01_V1_SRV.Return" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="GetReqidSet" EntityType="ZXK_01_V1_SRV.GetReqid" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="GetListSet" EntityType="ZXK_01_V1_SRV.GetList" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="UlkeSHSet" EntityType="ZXK_01_V1_SRV.UlkeSH" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZtermSHSet" EntityType="ZXK_01_V1_SRV.ZtermSH" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="KtokkSHSet" EntityType="ZXK_01_V1_SRV.KtokkSH" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="SASParaShSet" EntityType="ZXK_01_V1_SRV.SASParaSh" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="MutabakatShSet" EntityType="ZXK_01_V1_SRV.MutabakatSh" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="AssoFileSet" Association="ZXK_01_V1_SRV.AssoFile" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:content-version="1"><End EntitySet="FileSet" Role="FromRole_AssoFile"/><End EntitySet="FileSTSet" Role="ToRole_AssoFile"/></AssociationSet>
+				<AssociationSet Name="TalepAssoSet" Association="ZXK_01_V1_SRV.TalepAsso" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:content-version="1"><End EntitySet="YeniTalepKayitCreateDeepSet" Role="FromRole_TalepAsso"/><End EntitySet="YeniTalepKayitSet" Role="ToRole_TalepAsso"/></AssociationSet>
+				<AssociationSet Name="AssoFileUSet" Association="ZXK_01_V1_SRV.AssoFileU" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:content-version="1"><End EntitySet="FileUSet" Role="FromRole_AssoFileU"/><End EntitySet="FileUSTSet" Role="ToRole_AssoFileU"/></AssociationSet>
+				<AssociationSet Name="TalepAssoReturnSet" Association="ZXK_01_V1_SRV.TalepAssoReturn" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="YeniTalepKayitCreateDeepSet" Role="FromRole_TalepAssoReturn"/><End EntitySet="ReturnTalepSSet" Role="ToRole_TalepAssoReturn"/></AssociationSet>
+				<FunctionImport Name="SaveDocument" ReturnType="Collection(ZXK_01_V1_SRV.Return)" EntitySet="ReturnSet" m:HttpMethod="GET"><Parameter Name="attachment" Type="Edm.String" Mode="In"/><Parameter Name="extension" Type="Edm.String" Mode="In"/><Parameter Name="formno" Type="Edm.String" Mode="In"/></FunctionImport>
+			</EntityContainer><atom:link rel="self"
+				href="https://webidecp-i2lnz0johh.dispatcher.eu2.hana.ondemand.com/destinations/BazarStore/sap/opu/odata/sap/ZXK_01_V1_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-i2lnz0johh.dispatcher.eu2.hana.ondemand.com/destinations/BazarStore/sap/opu/odata/sap/ZXK_01_V1_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog id="idSelectDialogMtbkt" title="Ana Hesap" items="{ path: '/MutabakatShSet', sorter: { path: 'Saknr', descending: false } }"
+		search="_searchMutabakat" liveChange="_searchMutabakat" confirm="_confirmMutabakat" cancel="_confirmVbelnSH">
+		<StandardListItem title="{Saknr}" description="{Txt50}" iconDensityAware="false" iconInset="false" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

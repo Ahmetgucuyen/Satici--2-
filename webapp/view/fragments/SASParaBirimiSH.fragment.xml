@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog id="idSelectDialogSASParaBirimi" title="SAS Para Birimi"
+		items="{ path: '/SASParaShSet', sorter: { path: 'Waers', descending: false } }" search="_searchSASParaBirimi"
+		liveChange="_searchSASParaBirimi" confirm="_confirmSASParaBirimi" cancel="_confirmVbelnSH">
+		<StandardListItem title="{Waers}" description="{Ltext}" iconDensityAware="false" iconInset="false" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

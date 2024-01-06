@@ -1,0 +1,696 @@
+<mvc:View controllerName="app.Satici.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:smartVariant="sap.ui.comp.smartvariants"
+	xmlns:core="sap.ui.core" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield" xmlns:l="sap.ui.layout" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	xmlns:ui="sap.ui.table" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:table="sap.ui.table" xmlns:m="sap.m" xmlns:u="sap.ui.unified"
+	xmlns:smartMultiInput="sap.ui.comp.smartmultiinput">
+	<App id="app">
+		<pages>
+			<Page id="page">
+				<content>
+					<IconTabBar id="idIconTabBar" select=".onTabbar" class="sapUiResponsiveContentPadding">
+						<items>
+							<!--Kategoriya EKRANI-->
+							<IconTabFilter icon="sap-icon://request" iconColor="Positive" count="{/ProductCollectionStats/Counts/Weight/Ok}" text="Yeni Talep Aç"
+								key="Ytalep" visible="{InputModel>/InputModelTab}">
+								<VBox class="sapUiSmallMargin">
+									<f:Form id="FormDisplay480_12120Dual3" editable="false" binding="{FormModel>/RequestItems/0}">
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+												emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Tarih">
+														<f:fields>
+															<DatePicker id="RecDate" width="200px" editable="{InputModel>/InputModelEdit1}"
+																value="{path: 'FormModel>RecDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy', strictParsing: true , UTC: true}}"/>
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Yeni Talep">
+														<f:fields>
+															<!-- <Input id="Matnr" value="{FormModel>Matnr}" editable="{InputModel>/InputModelEdit1}" showValueHelp="true" valueHelpOnly="true"
+																valueHelpRequest="MatnrValueHelp" required="false"/> -->
+															<Button width="150px" id="idDosyaButton1" text="Dosya Yükle" icon="sap-icon://add" press="onPost" type="Attention"/>
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+											<!-- <f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Vekalet Listesi">
+														<f:fields>
+														       <Button text="Getir" press="IkameGet"></Button>
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer> -->
+										</f:formContainers>
+									</f:Form>
+								</VBox>
+								<VBox class="sapUiSmallMargin">
+									<f:Form id="FormDisplay480_12120Dual" editable="false" visible="false	" binding="{FormModel>/RequestItems/0}">
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanXL="5" labelSpanL="5" labelSpanM="5" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+												emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<!-- <f:FormElement label="Vekalet">
+														<f:fields>
+															<Input id="MatnrIkame" value="{FormModel>Bukrs}" editable="{InputModel>/InputModelEdit}" maxLength="18"/>
+															<Button text="Getir" press="IkameGet"></Button>
+														</f:fields>
+													</f:FormElement> -->
+													<f:FormElement label="Şirket Kodu">
+														<f:fields>
+															<Input id="MagS" width="250px" value="{FormModel>Bukrs}" required="true" editable="false"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="SA Organizasyonu">
+														<f:fields>
+															<Input id="DepS" width="250px" value="{FormModel>Ekorg}" required="true" editable="false"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Hesap Grubu">
+														<f:fields>
+															<Input id="Meins" width="250px" value="{FormModel>Ktokk}" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onValueHelpKtokk"
+																required="true"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Referans">
+														<f:fields>
+															<Input id="Gblok" width="250px" value="{FormModel>Ktock}" required="true"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Ad">
+														<f:fields>
+															<Input id="Gblo" width="250px" required="true" value="{FormModel>Name1}"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Mobil Telefon">
+														<f:fields>
+															<Input id="Gbl" width="250px" required="true" value="{FormModel>Telf1}"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="E-posta">
+														<f:fields>
+															<Input id="Gb" width="250px" required="true" value="{FormModel>AdSmtpadr}"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Tolerans Aralığı">
+														<f:fields>
+															<!--<Input id="idTolerans" width="250px" required="true" value="{FormModel>Tolerans}"/>-->
+															<Select id="idTolerans" change="handleOnayli" width="250px" valueState="None" required="true" selectedKey="{FormModel>Tolerans}"
+																valueStateText="empty string" selectedItemId="empty string" editable="true" enabled="true" icon="empty string" textAlign="Initial"
+																textDirection="Inherit" forceSelection="false">
+																<items>
+																	<core:Item key="0001" text="0001"/>
+																	<core:Item key="0002" text="0002"/>
+																	<core:Item key="0003" text="0003"/>
+																</items>
+															</Select>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Mutabakat Hesabı">
+														<f:fields>
+															<Input id="idMutabakat" valueHelpOnly="true" required="true" value="{FormModel>Saknr}" showValueHelp="true" width="250px"
+																valueHelpRequest="onValueHelpMutabakat"/>
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="SAS para birimi">
+														<f:fields>
+															<Input id="idSSASParaBirimi" valueHelpOnly="true" required="true" maxLength="40" value="{FormModel>Waers}" showValueHelp="true"
+																width="250px" valueHelpRequest="onValueHelpSASParaBirimi"/>
+															<!--<Input id="Gb" width="250px" required="true" value="{FormModel>AdSmtpadr}"/>-->
+														</f:fields>
+													</f:FormElement>
+													<!-- <f:FormElement label="Vergi Numarası">
+														<f:fields>
+															<Input id="G"  value="{FormModel>Mstae}" />
+														</f:fields>
+													</f:FormElement> -->
+													<!-- <f:FormElement label="Satınalma Adet">
+														<f:fields>
+															<Select id="Peinh" forceSelection="false" change=".onPeinh" selectedKey="{FormModel>Peinh}" enabled="{InputModel>/InputModelEdit}"
+																valueState="Success">
+																<core:ListItem key="{PeinhKey}" text="{PeinhAd}"/>
+																<layoutData>
+																	<l:GridData span="XL3 L8 M8 S3"/>
+																</layoutData>
+															</Select>
+														</f:fields>
+													</f:FormElement> -->
+													<!-- <f:FormElement label="Birim / Para Birimi">
+														<f:fields>
+															<Input id="Meins" value="{FormModel>Meins}" editable="{InputModel>/InputModelEdit}" showValueHelp="true" valueHelpOnly="true"
+																valueHelpRequest="MeinsValueHelp" required="true"/>
+															<Select id="Waers" forceSelection="false" change=".onWaers" selectedKey="{FormModel>Waers}" enabled="{InputModel>/InputModelEdit}">
+																<core:ListItem key="{WaersKey}" text="{WaersAd}" required="true"/>
+																<layoutData>
+																	<l:GridData span="XL3 L8 M8 S3"/>
+																</layoutData>
+															</Select>
+														</f:fields>
+													</f:FormElement> -->
+													<!-- <f:FormElement label="Alış Fiyatı">
+														<f:fields>
+															<Input id="Netpr" value="{path: 'FormModel>Netpr', type:'sap.ui.model.type.Currency', formatOptions: {showMeasure: false}}" maxLength="11"
+																type="Currency" editable="{InputModel>/InputModelEdit}" required="true"/>
+														</f:fields>
+													</f:FormElement> -->
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+								</VBox>
+							</IconTabFilter>
+							<IconTabSeparator visible="{InputModel>/InputModelTab}"/>
+							<!--Onayımda Bekleyenler EKRANI-->
+							<IconTabFilter icon="sap-icon://activity-items" iconColor="Critical" text="Onayımda Bekleyenler" key="Otalep"
+								visible="{InputModel>/InputModelTab1}">
+								<ui:Table id="duranVarlikOnayTable" rows="{oViewModel>/taleOnay}" selectionMode="Single" visibleRowCount="6" showNoData="false"
+									fixedColumnCount="1" rowSelectionChange="sAction">
+									<ui:columns>
+										<ui:Column width="8rem">
+											<Label text="Talep No"/>
+											<ui:template>
+												<Text text="{oViewModel>Requestid}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Şirket Kodu"/>
+											<ui:template>
+												<Text text="{oViewModel>Bukrs}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="SA Organizasyonu"/>
+											<ui:template>
+												<Text text="{oViewModel>Ekorg}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Hesap Grubu"/>
+											<ui:template>
+												<Text text="{oViewModel>Ktokk}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Referans(Satıcı)"/>
+											<ui:template>
+												<Text text="{oViewModel>Ktock}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Ad"/>
+											<ui:template>
+												<Text text="{oViewModel>Name1}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Telefon"/>
+											<ui:template>
+												<Text text="{oViewModel>Telf1}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="VKN"/>
+											<ui:template>
+												<Text text="{oViewModel>Saknr}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Waers"/>
+											<ui:template>
+												<Text text="{oViewModel>Waers}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Tolerans"/>
+											<ui:template>
+												<Text text="{oViewModel>Tolerans}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="E-mail"/>
+											<ui:template>
+												<Text text="{oViewModel>AdSmtpadr}"/>
+											</ui:template>
+										</ui:Column>
+										<!-- <ui:Column width="7rem">
+											<Label text="Tarih"/>
+											<ui:template>
+												<Text
+													text="{path: 'oViewModel>RecDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy', strictParsing: true , UTC: true}}"
+													wrapping="false"/>
+											</ui:template>
+										</ui:Column> -->
+										<ui:Column width="12rem">
+											<Label text="Vergi Numarası"/>
+											<ui:template>
+												<Input value="{oViewModel>Stcd1}" editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column>
+										<!-- <ui:Column width="8rem">
+											<Label text="Satınalma Adet"/>
+											<ui:template>
+												<Select id="PeinhRev" forceSelection="false" change=".onPeinh" selectedKey="{oViewModel>Peinh}" enabled="{InputModel>/InputModelEdit}"
+													valueState="Success">
+													<core:ListItem key="{PeinhKey}" text="{PeinhAd}"/>
+													<layoutData>
+														<l:GridData span="XL3 L8 M8 S3"/>
+													</layoutData>
+												</Select>
+											</ui:template>
+										</ui:Column> -->
+										<ui:Column width="4rem">
+											<Label text="KDV"/>
+											<ui:template>
+												<CheckBox id="idstkzu" editable="{InputModel>/InputModelEdit}" selected="{oViewModel>Stkzu}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="7rem">
+											<Label text="Ülke"/>
+											<ui:template>
+												<Input id="Ulke" value="{oViewModel>Land1}" editable="{InputModel>/InputModelEdit}" showValueHelp="true" valueHelpOnly="true"
+													valueHelpRequest="onValueHelpUlke" required="true"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="12rem">
+											<Label text="Banka Anahtarı"/>
+											<ui:template>
+												<Input value="{oViewModel>Bankk}" editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="12rem">
+											<Label text="Banka Hesabı"/>
+											<ui:template>
+												<Input value="{oViewModel>Bankn}" editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="12rem">
+											<Label text="Hesap Sahibi"/>
+											<ui:template>
+												<Input value="{oViewModel>KoinhFi}" editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="12rem">
+											<Label text="Banka Tipi"/>
+											<ui:template>
+												<Input value="{oViewModel>Bvtyp}" editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="12rem">
+											<Label text="Eski Hesap No"/>
+											<ui:template>
+												<Input value="{oViewModel>Altkn}" editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="7rem">
+											<Label text="Ödeme Koşulu"/>
+											<ui:template>
+												<Input id="Zterm" value="{oViewModel>Zterm}" editable="{InputModel>/InputModelEdit}" showValueHelp="true" valueHelpOnly="true"
+													valueHelpRequest="onValueHelpZterm" required="true"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="4rem">
+											<Label text="Dosya"/>
+											<ui:template>
+												<Button icon="sap-icon://show" type="Attention" press="onPressDosya"></Button>
+												<!-- <Input value="{oViewModel>Zterm}" showValueHelp="true" valueHelpOnly="true"
+                                                        valueHelpRequest="MeinsValueHelpRev" required="true"/> -->
+											</ui:template>
+										</ui:Column>
+									</ui:columns>
+								</ui:Table>
+							</IconTabFilter>
+							<!--Revizeler-->
+							<IconTabFilter icon="sap-icon://edit-outside" iconColor="Critical" text="Revizeler" key="Rtalep" visible="{InputModel>/InputModelRevize}">
+								<!--visible="{InputModel>/InputModelRevize}"-->
+								<ui:Table id="duranVarlikOnayTableRevize" rows="{oViewModel>/taleOnay}" selectionMode="Single" visibleRowCount="10" showNoData="false"
+									fixedColumnCount="1" rowSelectionChange="sAction">
+									<ui:columns>
+										<ui:Column width="8rem">
+											<Label text="Talep No"/>
+											<ui:template>
+												<Text text="{oViewModel>Requestid}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Revize Nedeni"/>
+											<ui:template>
+												<Text text="{oViewModel>Neden}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Şirket Kodu"/>
+											<ui:template>
+												<Text text="{oViewModel>Bukrs}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="SA Organizasyonu"/>
+											<ui:template>
+												<Text text="{oViewModel>Ekorg}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Hesap Grubu"/>
+											<ui:template>
+												<Input value="{oViewModel>Ktokk}" required="true" wrapping="false" maxLength="40"/>
+												<!-- <Text text="{oViewModel>Ktokk}"/> -->
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Referans(Satıcı)"/>
+											<ui:template>
+												<Input value="{oViewModel>Ktock}" required="true" wrapping="false" maxLength="40"/>
+												<!-- <Text text="{oViewModel>Ktock}"/> -->
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Ad"/>
+											<ui:template>
+												<Input value="{oViewModel>Name1}" required="true" wrapping="false" maxLength="40"/>
+												<!-- <Text text="{oViewModel>Name1}"/> -->
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="Telefon"/>
+											<ui:template>
+												<Input value="{oViewModel>Telf1}" required="true" wrapping="false" maxLength="40"/>
+												<!-- <Text text="{oViewModel>Telf1}"/> -->
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="8rem">
+											<Label text="E-mail"/>
+											<ui:template>
+												<Input value="{oViewModel>AdSmtpadr}" required="true" wrapping="false" maxLength="40"/>
+												<!-- <Text text="{oViewModel>AdSmtpadr}"/> -->
+											</ui:template>
+										</ui:Column>
+										<!-- <ui:Column width="7rem">
+											<Label text="Tarih"/>
+											<ui:template>
+												<Text
+													text="{path: 'oViewModel>RecDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy', strictParsing: true , UTC: true}}"
+													wrapping="false"/>
+											</ui:template>
+										</ui:Column> -->
+										<!-- <ui:Column width="12rem">
+											<Label text="Vergi Numarası"/>
+											<ui:template>
+												<Input value="{oViewModel>Stcd1}"  editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column> -->
+										<!-- <ui:Column width="8rem">
+											<Label text="Satınalma Adet"/>
+											<ui:template>
+												<Select id="PeinhRev" forceSelection="false" change=".onPeinh" selectedKey="{oViewModel>Peinh}" enabled="{InputModel>/InputModelEdit}"
+													valueState="Success">
+													<core:ListItem key="{PeinhKey}" text="{PeinhAd}"/>
+													<layoutData>
+														<l:GridData span="XL3 L8 M8 S3"/>
+													</layoutData>
+												</Select>
+											</ui:template>
+										</ui:Column> -->
+										<!-- <ui:Column width="4rem">
+											<Label text="KDV"/>
+											<ui:template>
+												<CheckBox  editable="{InputModel>/InputModelEdit}" selected="{oViewModel>Stkzu}"/>
+											</ui:template>
+										</ui:Column>
+										<ui:Column width="7rem">
+											<Label text="Ülke"/>
+											<ui:template>
+												<Input value="{oViewModel>Land1}" editable="{InputModel>/InputModelEdit}" showValueHelp="true" valueHelpOnly="true"
+													valueHelpRequest="MeinsValueHelpRev" required="true"/>
+											</ui:template>
+										</ui:Column>
+                                        <ui:Column width="12rem">
+											<Label text="Banka Anahtarı"/>
+											<ui:template>
+												<Input value="{oViewModel>Bankk}"  editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column>
+                                        <ui:Column width="12rem">
+											<Label text="Banka Hesabı"/>
+											<ui:template>
+												<Input value="{oViewModel>Bankn}"  editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column>
+                                        <ui:Column width="12rem">
+											<Label text="Hesap Sahibi"/>
+											<ui:template>
+												<Input value="{oViewModel>KoinhFi}"  editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column>
+                                        <ui:Column width="12rem">
+											<Label text="Banka Tipi"/>
+											<ui:template>
+												<Input value="{oViewModel>Bvtyp}"  editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+										</ui:Column>
+                                        <ui:Column width="12rem">
+											<Label text="Eski Hesap No"/>
+											<ui:template>
+												<Input value="{oViewModel>Altkn}"  editable="{InputModel>/InputModelEdit}" required="true" wrapping="false" maxLength="40"/>
+											</ui:template>
+                                        </ui:Column>
+                                            <ui:Column width="7rem">
+                                                <Label text="Ödeme Koşulu"/>
+                                                <ui:template>
+                                                    <Input value="{oViewModel>Zterm}"  editable="{InputModel>/InputModelEdit}" showValueHelp="true" valueHelpOnly="true"
+                                                        valueHelpRequest="MeinsValueHelpRev" required="true"/>
+                                                </ui:template>
+                                            </ui:Column> -->
+									</ui:columns>
+								</ui:Table>
+							</IconTabFilter>
+							<IconTabSeparator visible="{InputModel>/InputModelRevize}"/>
+							<!--Smart Table-->
+							<IconTabFilter icon="sap-icon://activity-items" iconColor="Default" text="Taleplerim" key="Ttalep" visible="{InputModel>/InputModelTab2}">
+								<smartVariant:SmartVariantManagement id="pageVariantCall" persistencyKey="SmartVariantPKeyIsListesi" showCreateTile="true"/>
+								<!-- <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="GetListSet" showFilterConfiguration="true" smartVariant="pageVariantCall"
+									persistencyKey="SmartFilterPKeyIsListesiSet">
+									<smartFilterBar:controlConfiguration>
+										<smartFilterBar:ControlConfiguration key="Bukrs" preventInitialDataFetchInValueHelpDialog="false">
+								<smartFilterBar:customControl>
+								
+									<Input id="idMatnr" showValueHelp="true" valueHelpRequest="onValueHelpMatnr"/>
+								</smartFilterBar:customControl>
+							</smartFilterBar:ControlConfiguration>
+							<smartFilterBar:ControlConfiguration key="Ekorg" preventInitialDataFetchInValueHelpDialog="false">
+								<smartFilterBar:customControl>
+									<Input id="idUname"/>
+								</smartFilterBar:customControl>
+							</smartFilterBar:ControlConfiguration>
+									</smartFilterBar:controlConfiguration>
+								</smartFilterBar:SmartFilterBar> -->
+								<smartTable:SmartTable id="smartCMMGiris" showTablePersonalisation="true" entitySet="GetListSet" class="sapUiMediumMarginTop"
+									initiallyVisibleFields="Requestid,Bukrs,Ekorg,Ktokk,Ktock,Name1,Telf1,AdSmtpadr,Stcd1,Stkzu,Land1,Bankk,Bankn,KoinhFi,Bvtyp,Altkn,Zterm,Neden"
+									requestAtLeastFields="Requestid,Bukrs,Ekorg,Ktokk,Ktock,Name1,Telf1,AdSmtpadr,Stcd1,Stkzu,Land1,Bankk,Bankn,KoinhFi,Bvtyp,Altkn,Zterm,Neden"
+									visible="{view>/pressedAbsid}" app:dateFormatSettings='\{"pattern":"dd.MM.yyyy"\}' beforeExport="onBeforeExport"
+									smartVariant="pageVariantCMGiris" showFullScreenButton="true" tableType="Table" useExportToExcel="true" useVariantManagement="true"
+									useTablePersonalisation="true" header="Taleplerim" showRowCount="true" beforeRebindTable="onBeforeRebindTable" persistencyKey="pKeyCMGiris"
+									smartFilterId="smartFilterBar">
+									<table:Table id="idTableCMMGirisRaporlama" selectionMode="Multi" visibleRowCount="10">
+										<table:columns>
+											<table:Column width="8rem" id="SayimIdId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Requestid", "leadingProperty": "Requestid","columnIndex":"0"}'/>
+												</table:customData>
+												<Text text="Sayim No" wrapping="false"/>
+												<table:template>
+													<Text text="{ path: 'Requestid', formatter: 'sayimFormatter' }"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="BukrsId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Bukrs", "leadingProperty": "Bukrs","columnIndex":"1"}'/>
+												</table:customData>
+												<Text text="Şirket Kodu" wrapping="false"/>
+												<table:template>
+													<Text text="{Bukrs}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="EkorgId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Ekorg", "leadingProperty": "Ekorg","columnIndex":"2"}'/>
+												</table:customData>
+												<Text text="SA Organizasyonu" wrapping="false"/>
+												<table:template>
+													<Text text="{Ekorg}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="KtokkId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Ktokk", "leadingProperty": "Ktokk","columnIndex":"3"}'/>
+												</table:customData>
+												<Text text="Hesap Grubu" wrapping="false"/>
+												<table:template>
+													<Text text="{Ktokk}"/>
+												</table:template>
+											</table:Column>
+											<!--BARKOD & BUTTON-->
+											<table:Column width="6rem" id="KtockId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Ktock", "leadingProperty": "Ktock","columnIndex":"4"}'/>
+												</table:customData>
+												<Text text="Referans" wrapping="false"/>
+												<table:template>
+													<Text text="{Ktock}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="Name1Id">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Name1", "leadingProperty": "Name1","columnIndex":"5"}'/>
+												</table:customData>
+												<Text text="Ad" wrapping="false"/>
+												<table:template>
+													<Text text="{Name1}"/>
+													<!-- <Text
+											text="{path:'Saat/ms', type:'sap.ui.model.type.Time', formatOptions: {UTC: true , source : { pattern : 'timestamp'}, pattern : 'HH:mm:ss'}, templateShareable:false}"/> -->
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="Telf1Id">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Telf1", "leadingProperty": "Telf1","columnIndex":"6"}'/>
+												</table:customData>
+												<Text text="Telefon" wrapping="false"/>
+												<table:template>
+													<Text text="{Telf1}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="AdSmtpadrId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "AdSmtpadr", "leadingProperty": "AdSmtpadr","columnIndex":"7"}'/>
+												</table:customData>
+												<Text text="Mail" wrapping="false"/>
+												<table:template>
+													<Text text="{Telf1}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="Stcd1Id">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Stcd1", "leadingProperty": "Stcd1","columnIndex":"8"}'/>
+												</table:customData>
+												<Text text="Vergi Numarası" wrapping="false"/>
+												<table:template>
+													<Text text="{Stcd1}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="StkzuId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Stkzu", "leadingProperty": "Stkzu","columnIndex":"9"}'/>
+												</table:customData>
+												<Text text="KDV" wrapping="false"/>
+												<table:template>
+													<Text text="{Stkzu}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="Land1Id">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Land1", "leadingProperty": "Land1","columnIndex":"10"}'/>
+												</table:customData>
+												<Text text="Ülke" wrapping="false"/>
+												<table:template>
+													<Text text="{Land1}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="BankkId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Bankk", "leadingProperty": "Bankk","columnIndex":"11"}'/>
+												</table:customData>
+												<Text text="Banka Anahtarı" wrapping="false"/>
+												<table:template>
+													<Text text="{Bankk}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="BanknId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Bankn", "leadingProperty": "Bankn","columnIndex":"12"}'/>
+												</table:customData>
+												<Text text="Banka Hesabı" wrapping="false"/>
+												<table:template>
+													<Text text="{Stcd1}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="KoinhFiId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "KoinhFi", "leadingProperty": "KoinhFi","columnIndex":"13"}'/>
+												</table:customData>
+												<Text text="Hesap Sahibi" wrapping="false"/>
+												<table:template>
+													<Text text="{KoinhFi}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="BvtypId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Bvtyp", "leadingProperty": "Bvtyp","columnIndex":"14"}'/>
+												</table:customData>
+												<Text text="Banka Tipi" wrapping="false"/>
+												<table:template>
+													<Text text="{Bvtyp}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="AltknId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Altkn", "leadingProperty": "Altkn","columnIndex":"15"}'/>
+												</table:customData>
+												<Text text="Eski Hesap No" wrapping="false"/>
+												<table:template>
+													<Text text="{Altkn}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="ZtermId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Zterm", "leadingProperty": "Zterm","columnIndex":"16"}'/>
+												</table:customData>
+												<Text text="Ödeme Koşulu" wrapping="false"/>
+												<table:template>
+													<Text text="{Zterm}"/>
+												</table:template>
+											</table:Column>
+											<table:Column width="6rem" id="NedenId">
+												<table:customData>
+													<core:CustomData key="p13nData" value='\{"columnKey": "Neden", "leadingProperty": "Neden","columnIndex":"17"}'/>
+												</table:customData>
+												<Text text="Neden" wrapping="false"/>
+												<table:template>
+													<Text text="{Neden}"/>
+												</table:template>
+											</table:Column>
+										</table:columns>
+									</table:Table>
+									<smartTable:customToolbar></smartTable:customToolbar>
+								</smartTable:SmartTable>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+				<footer>
+					<m:OverflowToolbar >
+						<m:Button type="Attetion" text="Vekalet" width="150px" press="onVekalet" visible="{InputModel>/InputModelButtonOnay}"/>
+						<m:ToolbarSpacer/>
+						<m:Button type="Accept" text="Yarat" press="onCreateTalep" visible="{InputModel>/InputModelButtonYarat}"/>
+						<m:Button type="Accept" text="Onayla" press="onCreateOnay" visible="{InputModel>/InputModelButtonOnay}"/>
+						<m:Button type="Accept" text="Revize" press="onopenRevize" visible="{InputModel>/InputModelButtonOnay}"/>
+						<m:Button type="Accept" text="Revize Tamamla" press="onCreateRevizeTamamla" visible="{InputModel>/InputModelButtonYaratRev}"/>
+						<m:Button type="Reject" text="Talebi İptal Et" press="onopenRet" visible="{InputModel>/InputModelButtonOnayKA}"/>
+						<!-- <m:Button type="Reject" text="İptal Et" press="onCreateIptal" visible="{InputModel>/InputModelButtonYarat}"/> -->
+					</m:OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

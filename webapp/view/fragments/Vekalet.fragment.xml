@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog title="Vekalet Listesi" state="None">
+		<VBox class="sapUiTinyMarginBeginEnd">
+			<List items="{Vekalet>/Vekalet}" visible="true" id="idVekalet" headerText="">
+				<ActionListItem icon="sap-icon://action" press="onActionPressedVekalet" text="{Vekalet>Vekalet}">
+					<customData>
+						<core:CustomData key="myCustomKey" value="{Vekalet>Vekalet}" writeToDom="true"/>
+					</customData>
+				</ActionListItem>
+			</List>
+			<!--<Text id="vekalet" text=""></Text>-->
+		</VBox>
+		<endButton>
+			<Button class="sapUiSizeCompact" text="Kapat" icon="sap-icon://sys-cancel" press="onClose3"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog id="idSelectDialogKtokk" title="Hesap Grubu"
+		items="{ path: '/KtokkSHSet', sorter: { path: 'Ktokk', descending: false } }" search="_searchKtokkSH"  liveChange="_searchKtokkSH" confirm="_confirmKtokkSH"
+		cancel="_confirmVbelnSH">
+		<StandardListItem title="{Ktokk}" iconDensityAware="false" iconInset="false" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>
